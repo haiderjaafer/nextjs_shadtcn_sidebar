@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/app-sidebar"
+import { AppSidebar } from "@/components/app-sidebar-new"
+import { CollapseSidebar } from "@/components/CollapseSidebar";
+import { Header } from "@/components/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,20 +29,37 @@ export default function RootLayout({
 }>) {
   return (
     
-    <html lang="en">
-      <body
+    // <html lang="en">
+    //   <body
        
-      >
-        <SidebarProvider>
+    //   >
+    //     <SidebarProvider>
+    //     <AppSidebar />
+        
+    //     {/* <CollapseSidebar/> */}
+        
+    //     <main  >
+        
+    //     {children}
+    //     </main>
+    //      </SidebarProvider>
+    //   </body>
+    // </html>
+
+    <html lang="en">
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <SidebarProvider>
         <AppSidebar />
         
-        <main>
-        <SidebarTrigger  />
-        {children}
+        <main className="flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-b from-background via-sidebar/70 to-sidebar border">
+        {/* <Header /> */}
+          {children}
         </main>
-         </SidebarProvider>
-      </body>
-    </html>
+      </SidebarProvider>
+    </body>
+  </html>
     
   );
 }
