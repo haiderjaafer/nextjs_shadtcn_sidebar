@@ -70,7 +70,7 @@ export function AppSidebar() {
                 />
               </Link>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <h1 className="truncate font-semibold">{data.app.name}</h1>
+                <h1 className="truncate font-semibold"><Link href="/">{data.app.name}</Link></h1>
                 <p className="truncate text-xs">{data.app.version}</p>
               </div>
             </SidebarMenuButton>

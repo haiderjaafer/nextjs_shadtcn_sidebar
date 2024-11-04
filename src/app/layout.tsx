@@ -46,9 +46,10 @@ export default function RootLayout({
     //   </body>
     // </html>
 
-    <html lang="en">
+    <html lang="en" >
     <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased ` }
+
     >
       <SidebarProvider>
         <AppSidebar />
